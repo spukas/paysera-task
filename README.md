@@ -11,7 +11,7 @@ Sistema nuskaito įvesties "input.json" duomenis, kurie yra nurodomi package.jso
 Funkcija priima bylos nuorodą kaip argumentą ir nuskaitos duomenis naudodama "fs" modulį.
 
 ### processData.js
-Funckija priima du argumentus: operaciją ir konfiguracijų rinkinį. Pagal operacijos tipą, pasirenka reikiamą konfiguraciją. Jeigu operacija yra fizinio asmens, jos istorija yra išsaugojama įrašant sumą ir savaitės numerį, taip apskaičiuojant nemokamą savaitės limitą išgryninant pinigus.
+Funckija priima du argumentus: operaciją ir konfiguracijų rinkinį. Pagal operacijos tipą ir valiutą, pasirenka reikiamą konfiguraciją, konvertuoja valiutą. Jeigu operacija yra fizinio asmens, jos istorija yra išsaugojama įrašant sumą ir savaitės numerį, taip apskaičiuojant nemokamą savaitės limitą išgryninant pinigus. Grąžina komisino mokesčio sumą operacijos valiuta.
 
 ### app.js
 Funkcija priima vieną argumentą: įvesties bylą. Pasiima konfiguracijas iškviečiant 'axios' modulį ir išsaugo kaip objektą. Nuskaito operacijos duomenis iškviečiant utils.js modulį, ir apdoroja kiekvieną operaciją atskirai iškviečiant processData.js modulį.
